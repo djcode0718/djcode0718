@@ -1,0 +1,54 @@
+<svg width="1200" height="270" viewBox="0 0 1200 270" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1200" y2="270" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#0B1220"/>
+      <stop offset="0.52" stop-color="#111827"/>
+      <stop offset="1" stop-color="#0E7490"/>
+    </linearGradient>
+    <linearGradient id="line" x1="0" y1="0" x2="1200" y2="0" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#22D3EE" stop-opacity="0"/>
+      <stop offset="0.5" stop-color="#22D3EE"/>
+      <stop offset="1" stop-color="#22D3EE" stop-opacity="0"/>
+    </linearGradient>
+    <filter id="glow" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur stdDeviation="5" result="blur"/>
+      <feMerge>
+        <feMergeNode in="blur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+  </defs>
+
+  <rect width="1200" height="270" rx="18" fill="url(#bg)"/>
+
+  <g opacity="0.16" stroke="#94A3B8" stroke-width="1">
+    <path d="M0 54H1200"/>
+    <path d="M0 108H1200"/>
+    <path d="M0 162H1200"/>
+    <path d="M0 216H1200"/>
+    <path d="M120 0V270"/>
+    <path d="M240 0V270"/>
+    <path d="M360 0V270"/>
+    <path d="M480 0V270"/>
+    <path d="M600 0V270"/>
+    <path d="M720 0V270"/>
+    <path d="M840 0V270"/>
+    <path d="M960 0V270"/>
+    <path d="M1080 0V270"/>
+  </g>
+
+  <circle cx="1040" cy="58" r="88" stroke="#22D3EE" stroke-opacity="0.12" stroke-width="1"/>
+  <circle cx="1040" cy="58" r="56" stroke="#22D3EE" stroke-opacity="0.18" stroke-width="1"/>
+  <circle cx="1040" cy="58" r="4" fill="#22D3EE" filter="url(#glow)"/>
+
+  <path d="M0 235 C170 195 310 250 470 222 C630 194 780 205 920 224 C1030 239 1110 220 1200 188 L1200 270 L0 270 Z" fill="#0B1220" fill-opacity="0.75"/>
+  <path d="M0 235 C170 195 310 250 470 222 C630 194 780 205 920 224 C1030 239 1110 220 1200 188" stroke="url(#line)" stroke-width="2" fill="none"/>
+
+  <text x="600" y="108" text-anchor="middle" fill="#F8FAFC" font-family="Arial, Helvetica, sans-serif" font-size="52" font-weight="700">Sreevedh Jella</text>
+  <text x="600" y="151" text-anchor="middle" fill="#CBD5E1" font-family="Arial, Helvetica, sans-serif" font-size="21" font-weight="500">AI / ML Engineer</text>
+  <text x="600" y="184" text-anchor="middle" fill="#22D3EE" font-family="Arial, Helvetica, sans-serif" font-size="15" font-weight="600">RAG  •  Agentic AI  •  Computer Vision</text>
+
+  <circle cx="70" cy="72" r="3" fill="#22D3EE" opacity="0.8"/>
+  <circle cx="92" cy="72" r="3" fill="#22D3EE" opacity="0.5"/>
+  <circle cx="114" cy="72" r="3" fill="#22D3EE" opacity="0.25"/>
+</svg>
