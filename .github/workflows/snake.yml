@@ -1,7 +1,8 @@
 name: Generate Contribution Snake
 
-"on":
+on:
   schedule:
+    # Refresh the contribution animation twice a day.
     - cron: "0 */12 * * *"
   workflow_dispatch:
 
@@ -10,31 +11,30 @@ permissions:
 
 jobs:
   build:
-    runs-on: ubuntu-latest
+    name: Generate snake animation
+    runs-on: ubuntu-24.04
     timeout-minutes: 10
 
     steps:
-      - name: Generate light snake
-        uses: dahan8473/snake-and-commits@v1
+      - name: Generate light-mode snake
+        uses: Platane/snk/svg-only@v3
         with:
-          github_user: ${{ github.repository_owner }}
-          output: dist/snake-light.svg
-          theme: green
-          counter: true
+          github_user_name: ${{ github.repository_owner }}
+          outputs: |
+            dist/snake-light.svg?palette=github-light&color_snake=%23216e39
 
-      - name: Generate dark snake
-        uses: dahan8473/snake-and-commits@v1
+      - name: Generate dark-mode snake
+        uses: Platane/snk/svg-only@v3
         with:
-          github_user: ${{ github.repository_owner }}
-          output: dist/snake-dark.svg
-          theme: matrix
-          counter: true
+          github_user_name: ${{ github.repository_owner }}
+          outputs: |
+            dist/snake-dark.svg?palette=github-dark&color_snake=%2339d353
 
       - name: Publish generated SVGs
-        uses: crazy-max/ghaction-github-pages@v4
+        uses: peaceiris/actions-gh-pages@v4
         with:
-          target_branch: output
-          build_dir: dist
-          commit_message: "Update contribution snake"
-        env:
-          GITHUB_TOKEN: ${{ github.token }}
+          github_token: ${{ github.token }}
+          publish_branch: output
+          publish_dir: ./dist
+          force_orphan: true
+          full_commit_message: "Update contribution snake"
